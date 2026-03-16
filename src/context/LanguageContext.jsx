@@ -55,7 +55,12 @@ const translations = {
     footer_placeholder_name: 'Nombre',
     footer_placeholder_email: 'Email',
     footer_placeholder_msg: 'Tu mensaje',
+    footer_service_default: 'Selecciona un servicio...',
+    footer_service_app: 'Desarrollo de App',
+    footer_service_web: 'Página Web a Medida',
+    footer_service_mkt: 'Marketing Digital',
     footer_btn_send: 'Enviar Mensaje',
+    footer_btn_whatsapp: 'Enviar WhatsApp',
     footer_rights: '© 2026 VORTEXA Technologies. Todos los derechos reservados.',
 
     // Chatbot
@@ -132,7 +137,12 @@ const translations = {
     footer_placeholder_name: 'Name',
     footer_placeholder_email: 'Email',
     footer_placeholder_msg: 'Your message',
+    footer_service_default: 'Select a service...',
+    footer_service_app: 'App Development',
+    footer_service_web: 'Custom Website',
+    footer_service_mkt: 'Digital Marketing',
     footer_btn_send: 'Send Message',
+    footer_btn_whatsapp: 'Send WhatsApp',
     footer_rights: '© 2026 VORTEXA Technologies. All rights reserved.',
 
     // Chatbot
