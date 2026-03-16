@@ -52,7 +52,7 @@ const Team = () => {
                             loop 
                             playsInline
                             poster="/assets/team_banner.png"
-                            className="w-full h-auto object-cover rounded-[2rem] shadow-[0_0_50px_rgba(17,82,212,0.3)] group-hover:shadow-[0_0_80px_rgba(17,82,212,0.5)] transition-all duration-700 cursor-pointer"
+                            className="w-full aspect-[21/18] object-cover rounded-[2rem] shadow-[0_0_50px_rgba(17,82,212,0.3)] group-hover:shadow-[0_0_80px_rgba(17,82,212,0.5)] transition-all duration-700 cursor-pointer"
                         />
                         
                         {/* Overlay text for instruction */}
