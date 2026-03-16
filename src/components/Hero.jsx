@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { motion } from 'framer-motion';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -16,25 +18,46 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto px-6 relative z-10 text-center">
-        <div className="inline-block px-4 py-1.5 mb-6 border border-primary/30 bg-primary/10 rounded-full text-primary text-sm font-semibold tracking-wider uppercase animate-fade">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="inline-block px-4 py-1.5 mb-6 border border-primary/30 bg-primary/10 rounded-full text-primary text-sm font-semibold tracking-wider uppercase"
+        >
           {t('hero_badge')}
-        </div>
+        </motion.div>
         
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight tracking-tight animate-fade" style={{ animationDelay: '0.1s' }}>
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight tracking-tight"
+        >
           {t('hero_title_1')} <br/>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-blue-400">{t('hero_title_2')}</span>
-        </h1>
+        </motion.h1>
         
-        <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-12 animate-fade" style={{ animationDelay: '0.2s' }}>
+        <motion.p 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-12"
+        >
           {t('hero_desc')}
-        </p>
+        </motion.p>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade" style={{ animationDelay: '0.3s' }}>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.6 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
           <button 
-            className="w-full sm:w-auto px-10 py-4 bg-primary hover:bg-primary-dark text-white text-lg font-bold rounded-theme shadow-[0_0_20px_rgba(17,82,212,0.4)] transition-all transform hover:-translate-y-1 active:scale-95"
+            className="group w-full sm:w-auto px-10 py-4 bg-primary hover:bg-primary-dark text-white text-lg font-bold rounded-theme shadow-[0_0_20px_rgba(17,82,212,0.4)] transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2"
             onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
           >
             {t('hero_btn_start')}
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
           <a 
             href="#services" 
@@ -42,14 +65,17 @@ const Hero = () => {
           >
             {t('hero_btn_services')}
           </a>
-        </div>
+        </motion.div>
         
         {/* Scroll Indicator */}
-        <div className="mt-24 animate-bounce opacity-40">
-          <svg className="h-6 w-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.4 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="mt-24 animate-bounce"
+        >
+          <ChevronDown className="h-8 w-8 mx-auto text-white" />
+        </motion.div>
       </div>
     </section>
   );

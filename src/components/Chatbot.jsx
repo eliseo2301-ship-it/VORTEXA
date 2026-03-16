@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MessageCircle, X, Send } from 'lucide-react';
 
 const Chatbot = () => {
     const { t } = useLanguage();
@@ -86,12 +88,19 @@ const Chatbot = () => {
 
     return (
         <div className="chatbot-wrapper">
-            <button className="bot-toggle btn-primary" onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? '✕' : '💬'}
+            <button className="bot-toggle btn-primary flex items-center justify-center transition-transform hover:scale-110" onClick={() => setIsOpen(!isOpen)}>
+                {isOpen ? <X className="w-7 h-7" /> : <MessageCircle className="w-7 h-7" />}
             </button>
 
+            <AnimatePresence>
             {isOpen && (
-                <div className="glass chat-window animate-fade">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className="glass chat-window"
+                >
                     <div className="chat-header">
                         <h4>{t('chat_header')}</h4>
                     </div>
@@ -112,7 +121,7 @@ const Chatbot = () => {
                                     className="chat-input"
                                     autoFocus
                                 />
-                                <button type="submit" className="btn btn-primary btn-sm">→</button>
+                                <button type="submit" className="btn btn-primary btn-sm flex items-center justify-center p-2"><Send className="w-4 h-4"/></button>
                             </form>
                         )}
 
@@ -155,8 +164,9 @@ const Chatbot = () => {
                         )}
                         <div ref={chatEndRef} />
                     </div>
-                </div>
+                </motion.div>
             )}
+            </AnimatePresence>
 
             <style>{`
         .chatbot-wrapper { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
