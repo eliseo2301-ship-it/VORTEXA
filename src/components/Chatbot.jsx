@@ -7,6 +7,8 @@ const Chatbot = () => {
     const [messages, setMessages] = useState([]);
     const [step, setStep] = useState('askName');
     const [userName, setUserName] = useState('');
+    const [selectedService, setSelectedService] = useState('');
+    const [contactInfo, setContactInfo] = useState({ link: '', label: '' });
     const [inputValue, setInputValue] = useState('');
     const chatEndRef = useRef(null);
 
@@ -36,6 +38,7 @@ const Chatbot = () => {
     };
 
     const handleServiceSelect = (serviceKey, serviceTranslation) => {
+        setSelectedService(serviceTranslation);
         setMessages([...messages, 
             { text: serviceTranslation, type: 'user' },
             { text: t('chat_bot_service_reply', { service: serviceTranslation }), type: 'bot' }
@@ -54,17 +57,24 @@ const Chatbot = () => {
     const handleLocationSelect = (locationKey) => {
         const locationName = t(locationKey);
         let phoneText = "";
-        let phoneLink = "";
         let phoneDisplay = "";
+        
+        let customMessage = `Hola VORTEXA, mi nombre es ${userName || 'un cliente'}. `;
+        if (selectedService) {
+            customMessage += `Me interesa información sobre: ${selectedService}. `;
+        }
+        customMessage += `Me gustaría agendar una cita en ${locationName}.`;
+        
+        const encodedMessage = encodeURIComponent(customMessage);
         
         if (locationKey === 'chat_val_cancun') {
             phoneText = t('chat_phone_text_cancun');
-            phoneLink = "https://wa.me/529985265108";
             phoneDisplay = "998 526 5108";
+            setContactInfo({ link: `https://wa.me/529985265108?text=${encodedMessage}`, label: 'WhatsApp Cancún' });
         } else if (locationKey === 'chat_val_cdmx') {
             phoneText = t('chat_phone_text_cdmx');
-            phoneLink = "https://wa.me/525542146603";
             phoneDisplay = "55 4214 6603";
+            setContactInfo({ link: `https://wa.me/525542146603?text=${encodedMessage}`, label: 'WhatsApp CDMX' });
         }
         
         setMessages([...messages, 
@@ -131,16 +141,15 @@ const Chatbot = () => {
 
                         {step === 'end' && (
                             <div className="chat-options">
-                                {messages[messages.length - 1].text.includes('5108') && (
-                                    <a href="https://wa.me/529985265108" target="_blank" rel="noreferrer" className="btn btn-primary btn-sm btn-link">WhatsApp Cancún</a>
-                                )}
-                                {messages[messages.length - 1].text.includes('6603') && (
-                                    <a href="https://wa.me/525542146603" target="_blank" rel="noreferrer" className="btn btn-primary btn-sm btn-link">WhatsApp CDMX</a>
+                                {contactInfo.link && (
+                                    <a href={contactInfo.link} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm btn-link">{contactInfo.label}</a>
                                 )}
                                 <button className="btn btn-secondary btn-sm" onClick={() => {
                                     setMessages([{ text: t('chat_bot_ask_name'), type: 'bot' }]);
                                     setStep('askName');
                                     setUserName('');
+                                    setSelectedService('');
+                                    setContactInfo({ link: '', label: '' });
                                 }}>{t('chat_btn_restart')}</button>
                             </div>
                         )}
