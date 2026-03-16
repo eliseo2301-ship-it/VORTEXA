@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-darkBg text-white font-sans overflow-x-hidden selection:bg-primary selection:text-white antialiased;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-[#16161a]/70 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass {
+    @apply glass-effect rounded-theme shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+  }
+
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-blue-400;
+  }
+
+  /* From Servicios */
+  .service-card {
+    @apply p-8 bg-surface border border-gray-800 rounded-custom transition-all duration-300;
+  }
+  .service-card:hover {
+    @apply border-primary;
+    animation: glow 2s infinite ease-in-out;
+  }
+
+  /* Shared Button Styles if needed */
+  .btn {
+    @apply px-10 py-4 font-bold rounded-theme transition-all transform hover:-translate-y-1 active:scale-95 inline-block text-center cursor-pointer;
+  }
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white shadow-[0_0_20px_rgba(17,82,212,0.4)];
+  }
+}

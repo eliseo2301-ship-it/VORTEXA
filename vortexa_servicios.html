@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vortexa | Tech Solutions &amp; Services</title>
+<!-- Google Font: Space Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1152d4',
+            dark: '#0a0a0a',
+            surface: '#121212',
+            accent: '#1e3a8a',
+          },
+          fontFamily: {
+            sans: ['Space Grotesk', 'sans-serif'],
+          },
+          borderRadius: {
+            'custom': '8px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-animations">
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 5px rgba(17, 82, 212, 0.2); }
+      50% { box-shadow: 0 0 20px rgba(17, 82, 212, 0.4); }
+    }
+    .service-card:hover {
+      animation: glow 2s infinite ease-in-out;
+      border-color: #1152d4;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #1152d4, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-dark text-gray-100 font-sans selection:bg-primary selection:text-white">
+<!-- BEGIN: Navigation -->
+<nav class="sticky top-0 z-50 bg-dark/80 backdrop-blur-md border-b border-gray-800" data-purpose="main-nav">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-custom flex items-center justify-center">
+<span class="text-white font-bold text-xl">V</span>
+</div>
+<span class="font-bold text-xl tracking-tight">VORTEXA</span>
+</div>
+<div class="hidden md:block">
+<div class="ml-10 flex items-baseline space-x-8">
+<a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium" href="#">Home</a>
+<a class="text-primary px-3 py-2 text-sm font-medium border-b-2 border-primary" href="#">Services</a>
+<a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium" href="#">Case Studies</a>
+<a class="bg-primary hover:bg-blue-700 px-5 py-2 rounded-custom text-sm font-bold transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+<!-- Mobile menu button -->
+<div class="md:hidden">
+<button class="text-gray-400 hover:text-white focus:outline-none" type="button">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- END: Navigation -->
+<!-- BEGIN: Hero Section -->
+<header class="relative py-20 overflow-hidden" data-purpose="hero-header">
+<div class="absolute inset-0 z-0 opacity-20">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary blur-[120px] rounded-full"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+<h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+        Next-Gen <span class="gradient-text">Tech Solutions</span>
+</h1>
+<p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+        Empowering global enterprises with cutting-edge infrastructure, intelligent AI systems, and robust security protocols built for the future.
+      </p>
+</div>
+</header>
+<!-- END: Hero Section -->
+<!-- BEGIN: Services Grid -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service 1: Cloud Infrastructure -->
+<article class="service-card p-8 bg-surface border border-gray-800 rounded-custom transition-all duration-300 group" data-purpose="service-item">
+<div class="w-12 h-12 bg-primary/10 rounded-custom flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="text-xl font-bold mb-4">Cloud Infrastructure</h3>
+<p class="text-gray-400 leading-relaxed mb-6">
+          Architecting resilient, scalable multi-cloud environments tailored for high-performance computing. We ensure 99.99% uptime and seamless deployment pipelines using modern IaC methodologies.
+        </p>
+<a class="inline-flex items-center text-primary font-semibold hover:underline group-hover:gap-2 transition-all" href="#">
+          Learn More 
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</article>
+<!-- Service 2: AI Integration -->
+<article class="service-card p-8 bg-surface border border-gray-800 rounded-custom transition-all duration-300 group" data-purpose="service-item">
+<div class="w-12 h-12 bg-primary/10 rounded-custom flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="text-xl font-bold mb-4">AI Integration</h3>
+<p class="text-gray-400 leading-relaxed mb-6">
+          Leverage the power of Large Language Models and custom machine learning workflows. We integrate intelligent automation into your existing stack to boost productivity and insight generation.
+        </p>
+<a class="inline-flex items-center text-primary font-semibold hover:underline group-hover:gap-2 transition-all" href="#">
+          Learn More 
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</article>
+<!-- Service 3: Cybersecurity -->
+<article class="service-card p-8 bg-surface border border-gray-800 rounded-custom transition-all duration-300 group" data-purpose="service-item">
+<div class="w-12 h-12 bg-primary/10 rounded-custom flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="text-xl font-bold mb-4">Cybersecurity</h3>
+<p class="text-gray-400 leading-relaxed mb-6">
+          Zero-trust architecture and proactive threat hunting. Our security experts deploy advanced encryption and 24/7 monitoring to protect your digital assets from sophisticated global threats.
+        </p>
+<a class="inline-flex items-center text-primary font-semibold hover:underline group-hover:gap-2 transition-all" href="#">
+          Learn More 
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</article>
+<!-- Service 4: Data Engineering -->
+<article class="service-card p-8 bg-surface border border-gray-800 rounded-custom transition-all duration-300 group" data-purpose="service-item">
+<div class="w-12 h-12 bg-primary/10 rounded-custom flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="text-xl font-bold mb-4">Data Engineering</h3>
+<p class="text-gray-400 leading-relaxed mb-6">
+          Building high-throughput data pipelines and real-time streaming solutions. We transform raw data into actionable intelligence through robust ETL processes and data warehousing.
+        </p>
+<a class="inline-flex items-center text-primary font-semibold hover:underline group-hover:gap-2 transition-all" href="#">
+          Learn More 
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</article>
+<!-- Service 5: DevOps Automation -->
+<article class="service-card p-8 bg-surface border border-gray-800 rounded-custom transition-all duration-300 group" data-purpose="service-item">
+<div class="w-12 h-12 bg-primary/10 rounded-custom flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="text-xl font-bold mb-4">DevOps Automation</h3>
+<p class="text-gray-400 leading-relaxed mb-6">
+          Streamlining the software development lifecycle through Kubernetes orchestration, CI/CD optimization, and observability tools to increase release velocity and quality.
+        </p>
+<a class="inline-flex items-center text-primary font-semibold hover:underline group-hover:gap-2 transition-all" href="#">
+          Learn More 
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</article>
+<!-- Service 6: Blockchain Systems -->
+<article class="service-card p-8 bg-surface border border-gray-800 rounded-custom transition-all duration-300 group" data-purpose="service-item">
+<div class="w-12 h-12 bg-primary/10 rounded-custom flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="text-xl font-bold mb-4">Blockchain Systems</h3>
+<p class="text-gray-400 leading-relaxed mb-6">
+          Developing secure, decentralized applications and private ledger solutions. We help businesses leverage smart contracts and DLT for transparent and immutable record keeping.
+        </p>
+<a class="inline-flex items-center text-primary font-semibold hover:underline group-hover:gap-2 transition-all" href="#">
+          Learn More 
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</article>
+</div>
+</main>
+<!-- END: Services Grid -->
+<!-- BEGIN: Call to Action -->
+<section class="bg-primary/5 py-16 border-y border-gray-800" data-purpose="cta-section">
+<div class="max-w-7xl mx-auto px-4 text-center">
+<h2 class="text-2xl md:text-3xl font-bold mb-6">Ready to upgrade your infrastructure?</h2>
+<button class="bg-primary hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-custom transition-all transform hover:scale-105">
+        Book a Technical Consultation
+      </button>
+</div>
+</section>
+<!-- END: Call to Action -->
+<!-- BEGIN: Footer -->
+<footer class="py-12 bg-dark text-gray-500 border-t border-gray-900" data-purpose="site-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 grayscale opacity-50">
+<div class="w-6 h-6 bg-gray-400 rounded-custom flex items-center justify-center">
+<span class="text-dark font-bold text-xs">V</span>
+</div>
+<span class="font-bold text-lg tracking-tight">VORTEXA</span>
+</div>
+<div class="flex space-x-6 text-sm">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Security Strategy</a>
+</div>
+<p class="text-sm">© 2023 Vortexa Technologies. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>
