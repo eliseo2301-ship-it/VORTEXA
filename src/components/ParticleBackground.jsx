@@ -43,11 +43,11 @@ const ParticleBackground = () => {
                 this.baseX = x;
                 this.baseY = y;
                 this.size = Math.random() * 2 + 1;
-                this.density = (Math.random() * 30) + 1;
+                this.density = (Math.random() * 8) + 1; // Reduced for smoother movement
             }
             
             draw() {
-                ctx.fillStyle = 'rgba(0, 255, 255, 0.8)'; // Cyan color as requested
+                ctx.fillStyle = 'rgba(65, 117, 222, 0.6)'; // Blue primary tone to match the site
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.closePath();
@@ -73,22 +73,22 @@ const ParticleBackground = () => {
                     } else {
                         if (this.x !== this.baseX) {
                             let rdx = this.x - this.baseX;
-                            this.x -= rdx / 20;
+                            this.x -= rdx / 70; // Slower, smoother return
                         }
                         if (this.y !== this.baseY) {
                             let rdy = this.y - this.baseY;
-                            this.y -= rdy / 20;
+                            this.y -= rdy / 70; // Slower, smoother return
                         }
                     }
                 } else {
                     // Slowly return to base position if mouse is out
                     if (this.x !== this.baseX) {
                         let rdx = this.x - this.baseX;
-                        this.x -= rdx / 20;
+                        this.x -= rdx / 70;
                     }
                     if (this.y !== this.baseY) {
                         let rdy = this.y - this.baseY;
-                        this.y -= rdy / 20;
+                        this.y -= rdy / 70;
                     }
                 }
             }
