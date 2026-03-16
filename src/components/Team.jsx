@@ -26,12 +26,12 @@ const Team = () => {
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="w-full max-w-3xl rounded-[2rem] overflow-hidden"
+                        className="w-full max-w-3xl rounded-[2rem] overflow-hidden group border border-white/5 bg-transparent"
                     >
                         <img 
                             src="/assets/team_banner.png" 
                             alt="Equipo Directivo VORTEXA - Eliseo y Carlos" 
-                            className="w-full h-auto object-cover rounded-[2rem] shadow-[0_0_50px_rgba(17,82,212,0.3)] hover:shadow-[0_0_80px_rgba(17,82,212,0.5)] transition-all duration-700 hover:scale-[1.02] border border-white/5"
+                            className="w-full h-auto object-cover rounded-[2rem] shadow-[0_0_50px_rgba(17,82,212,0.3)] group-hover:shadow-[0_0_80px_rgba(17,82,212,0.5)] transition-all duration-700 group-hover:scale-[1.02] group-hover:animate-wave origin-bottom"
                         />
                     </motion.div>
                 </div>

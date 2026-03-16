@@ -28,7 +28,8 @@ export default {
       animation: {
         'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'blob': 'blob 7s infinite',
-        'glow': 'glow 2s infinite ease-in-out'
+        'glow': 'glow 2s infinite ease-in-out',
+        'wave': 'wave 2.5s ease-in-out infinite'
       },
       keyframes: {
         blob: {
@@ -40,6 +41,13 @@ export default {
         glow: {
           '0%, 100%': { boxShadow: '0 0 5px rgba(17, 82, 212, 0.2)' },
           '50%': { boxShadow: '0 0 20px rgba(17, 82, 212, 0.4)' }
+        },
+        wave: {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '20%': { transform: 'rotate(2deg)' },
+          '40%': { transform: 'rotate(-2deg)' },
+          '60%': { transform: 'rotate(1deg)' },
+          '80%': { transform: 'rotate(-1deg)' }
         }
       }
     }
