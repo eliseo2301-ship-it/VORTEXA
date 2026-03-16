@@ -26,7 +26,7 @@ const Team = () => {
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="w-full max-w-5xl rounded-[2rem] overflow-hidden"
+                        className="w-full max-w-3xl rounded-[2rem] overflow-hidden"
                     >
                         <img 
                             src="/assets/team_banner.png" 
