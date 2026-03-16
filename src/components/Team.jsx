@@ -40,7 +40,7 @@ const Team = () => {
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="w-full max-w-3xl rounded-[2rem] overflow-hidden group border border-white/5 bg-transparent relative"
+                        className="w-full max-w-md rounded-[2rem] overflow-hidden group border border-white/5 bg-transparent relative"
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                     >
