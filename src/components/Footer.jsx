@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { Facebook, Instagram, Mail } from 'lucide-react';
 
 const Footer = () => {
   const { t, language } = useLanguage();
@@ -38,8 +39,28 @@ const Footer = () => {
           <div className="footer-links">
             <h4 className="text-xl font-bold mb-6 text-white border-b border-white/10 pb-2 inline-block">{t('footer_socials')}</h4>
             <div className="flex flex-col gap-4">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">Facebook</a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">Instagram</a>
+              <a 
+                href="https://www.facebook.com/profile.php?id=61579576267068" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="flex items-center gap-3 text-gray-400 hover:text-white transition-all group"
+              >
+                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#1877F2]/20 group-hover:text-[#1877F2] transition-colors">
+                  <Facebook size={18} />
+                </div>
+                <span>Facebook</span>
+              </a>
+              <a 
+                href="https://www.instagram.com/vortexa1603/" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="flex items-center gap-3 text-gray-400 hover:text-white transition-all group"
+              >
+                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#E4405F]/20 group-hover:text-[#E4405F] transition-colors">
+                  <Instagram size={18} />
+                </div>
+                <span>Instagram</span>
+              </a>
               <a href="https://wa.me/521234567890" target="_blank" rel="noreferrer" className="inline-block mt-2">
                 <span className="bg-[#25D366] text-white px-4 py-2 rounded-theme hover:bg-[#1ebd59] transition-colors shadow-lg">WhatsApp Chat</span>
               </a>
@@ -48,6 +69,17 @@ const Footer = () => {
 
           <div className="footer-form">
             <h4 className="text-xl font-bold mb-6 text-white border-b border-white/10 pb-2 inline-block">{t('footer_contact_title')}</h4>
+            
+            <a 
+              href="mailto:vortexa1603@gmail.com" 
+              className="flex items-center gap-3 text-gray-400 hover:text-white transition-all group mb-6"
+            >
+              <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary transition-colors">
+                <Mail size={18} />
+              </div>
+              <span>vortexa1603@gmail.com</span>
+            </a>
+
             <form onSubmit={handleWhatsApp} className="flex flex-col gap-4">
               <input 
                 type="text" 
